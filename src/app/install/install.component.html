@@ -1,7 +1,14 @@
-<div class="install-screen" *ngIf="isMobile() && canInstall()">
+<!-- Android install -->
+<div class="install-screen" *ngIf="isMobile() && canInstall() && !isIos()">
     <button (click)="install()">Install App</button>
 </div>
 
-<p>{{platform}}</p>
-<p>isMobile: {{isMobile()}}</p>
-<p>canInstall: {{canInstall()}}</p>
+<!-- iOS Install Banner -->
+<div class="install-banner-ios" *ngIf="isIos() && !isInStandaloneMode()">
+    <p>Install this app on your iPhone:</p>
+    <ol>
+        <li>Tap the <strong>Share</strong> button in Safari.</li>
+        <li>Then tap <strong>Add to Home Screen</strong>.</li>
+    </ol>
+    <button (click)="dismissIosBanner()">Close</button>
+</div>

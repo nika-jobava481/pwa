@@ -10,8 +10,9 @@ import { CommonModule } from '@angular/common';
 })
 export class InstallComponent {
   platform = navigator.userAgent;
+  dismissedIos = false;
 
-  constructor(public pwa: PwaService) {}
+  constructor(public pwa: PwaService) { }
 
   install() {
     this.pwa.promptInstall();
@@ -21,7 +22,19 @@ export class InstallComponent {
     return /Mobi|Android/i.test(this.platform);
   }
 
+  isIos(): boolean {
+    return /iPhone|iPad|iPod/.test(this.platform);
+  }
+
+  isInStandaloneMode(): boolean {
+    return 'standalone' in window.navigator && (window.navigator as any).standalone;
+  }
+
   canInstall(): boolean {
     return this.pwa.canInstall();
+  }
+
+  dismissIosBanner(): void {
+    this.dismissedIos = true;
   }
 }

@@ -1,13 +1,72 @@
-// .install-screen {
-//     height: 100vh;
-//     width: 100vw;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     background: #f0f0f0;
-// }
+.install-screen {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: #1976d2;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
 
-// button {
-//     padding: 1rem 2rem;
-//     font-size: 1.5rem;
-// }
+    button {
+        background: white;
+        color: #1976d2;
+        border: none;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover {
+            background: #e3f2fd;
+        }
+    }
+}
+
+.install-banner-ios {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1976d2;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+
+    p {
+        font-size: 1rem;
+        margin: 0 0 0.5rem;
+    }
+
+    ol {
+        margin: 0 auto 1rem;
+        padding-left: 1.2rem;
+        text-align: left;
+        max-width: 300px;
+
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+    }
+
+    button {
+        background: none;
+        border: 1px solid white;
+        color: white;
+        padding: 0.4rem 0.9rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+    }
+}
