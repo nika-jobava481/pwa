@@ -1,0 +1,7 @@
+<div class="install-screen" *ngIf="isMobile() && canInstall()">
+    <button (click)="install()">Install App</button>
+</div>
+
+<p>{{platform}}</p>
+<p>isMobile: {{isMobile()}}</p>
+<p>canInstall: {{canInstall()}}</p>
